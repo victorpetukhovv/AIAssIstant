@@ -1,5 +1,5 @@
 import { Form } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 interface LoginFormProps {
   setErrorMessage: React.Dispatch<React.SetStateAction<string | null>>;
@@ -19,11 +19,11 @@ export default function LoginForm({ setErrorMessage }: LoginFormProps) {
       username.value === "" &&
       password.value === ""
     ) {
-      console.log("I am expecting an username address and a password!");
-      setErrorMessage("I am expecting an username address and a password!");
+      console.log("I am expecting an username and a password!");
+      setErrorMessage("I am expecting an username and a password!");
     } else if (username && username.value === "") {
-      console.log("I am expecting an username address!");
-      setErrorMessage("I am expecting an username address!");
+      console.log("I am expecting an username!");
+      setErrorMessage("I am expecting an username!");
     } else if (password && password.value === "") {
       console.log("I am expecting a password!");
       setErrorMessage("I am expecting a password!");

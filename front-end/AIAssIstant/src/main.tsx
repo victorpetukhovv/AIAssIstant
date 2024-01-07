@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
 import LoginForm from "./routes/login.tsx";
 import Root from "./routes/root";
 import ErrorPage from "./components/ErrorPage";
@@ -17,6 +16,11 @@ const router = createBrowserRouter([
     path: "/login",
     element: <LoginForm />,
     errorElement: <ErrorPage />,
+    loader: async () => {
+      return fetch("http://localhost:8080/hello-world")
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    },
   },
 ]);
 
